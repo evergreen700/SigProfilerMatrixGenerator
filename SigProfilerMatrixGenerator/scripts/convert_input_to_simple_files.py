@@ -878,18 +878,18 @@ def convertMAF(project, vcf_path, genome, output_path, ncbi_chrom, log_file):
                     line = lines.strip().split("\t")
                     if len(line) == 0:
                         continue
-                    chrom = line[4]
+                    chrom = line[3]
                     if len(chrom) > 2:
                         chrom = chrom[3:]
                     if chrom in ncbi_chrom:
                         chrom = ncbi_chrom[chrom]
                     if chrom.upper() == "M" or chrom == "mt":
                         chrom = "MT"
-                    start = line[5]
-                    end = line[6]
-                    ref = line[10]
-                    mut = line[12]
-                    sample = line[15]
+                    start = line[4]
+                    end = line[5]
+                    ref = line[9]
+                    mut = line[11]
+                    sample = line[12]
                     if sample not in samples:
                         samples.append(sample)
                     int(start)
